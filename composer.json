@@ -5,6 +5,7 @@
         "php": "^7.1.3",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "2performant/2performant-php": "^1.0",
         "cspoo/swiftmailer-mailgun-bundle": "^1.1",
         "friendsofsymfony/user-bundle": "~2.0",
         "hwi/oauth-bundle": "^0.6.3",

@@ -1,4 +1,7 @@
 {
+    "2performant/2performant-php": {
+        "version": "1.0"
+    },
     "clue/stream-filter": {
         "version": "v1.4.0"
     },

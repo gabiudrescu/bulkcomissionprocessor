@@ -4,8 +4,54 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "661f006849fda702dc859f7e6a53abc4",
+    "content-hash": "cc5dfd4fbea6e61a4fd93b9fb72c1e1b",
     "packages": [
+        {
+            "name": "2performant/2performant-php",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/2Parale/2Performant-php.git",
+                "reference": "df8423dd265b57177047d180d913c805592adbc7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/2Parale/2Performant-php/zipball/df8423dd265b57177047d180d913c805592adbc7",
+                "reference": "df8423dd265b57177047d180d913c805592adbc7",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TPerformant\\API\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tudor Sandu",
+                    "email": "tm.sandu@gmail.com",
+                    "homepage": "http://tudorsandu.ro",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP wrapper for 2Performant API",
+            "homepage": "http://github.com/2Parale/2Performant-PHP",
+            "keywords": [
+                "2Performant",
+                "api",
+                "http",
+                "php",
+                "rest"
+            ],
+            "time": "2017-11-07T16:38:45+00:00"
+        },
         {
             "name": "clue/stream-filter",
             "version": "v1.4.0",
