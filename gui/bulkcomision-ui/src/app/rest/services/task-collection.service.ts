@@ -5,7 +5,7 @@ import { TaskCollection } from '../../model';
 @Injectable()
 export class TaskCollectionService {
 
-  path = 'localhost:3000/tasks-collections';
+  path = 'http://localhost:3000/tasks-collections';
 
   constructor(private http: HttpClient) { }
 
