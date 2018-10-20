@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -21,6 +23,7 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
+        $this->campaigns = new ArrayCollection();
     }
 
     /**
@@ -57,6 +60,11 @@ class User extends BaseUser
      * @ORM\Column(type="string", name="provider_id", nullable=true)
      */
     protected $providerId;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Campaign", mappedBy="user")
+     */
+    private $campaigns;
 
 
     public function getId(): ?int
@@ -172,6 +180,37 @@ class User extends BaseUser
     public function setProviderId($providerId): void
     {
         $this->providerId = $providerId;
+    }
+
+    /**
+     * @return Collection|Campaign[]
+     */
+    public function getCampaigns(): Collection
+    {
+        return $this->campaigns;
+    }
+
+    public function addCampaign(Campaign $campaign): self
+    {
+        if (!$this->campaigns->contains($campaign)) {
+            $this->campaigns[] = $campaign;
+            $campaign->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCampaign(Campaign $campaign): self
+    {
+        if ($this->campaigns->contains($campaign)) {
+            $this->campaigns->removeElement($campaign);
+            // set the owning side to null (unless already changed)
+            if ($campaign->getUser() === $this) {
+                $campaign->setUser(null);
+            }
+        }
+
+        return $this;
     }
 
 }

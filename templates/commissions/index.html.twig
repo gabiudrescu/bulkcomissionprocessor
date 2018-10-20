@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">ID Commission</th>
+                        <th scope="col">ID Order</th>
+                        <th scope="col">Value</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for key, commission in commissions %}
+                        <tr>
+                            <th scope="row">{{ key }}</th>
+                            <td>{{ commission.getId }}</td>
+                            <td>{{ commission.getTransactionId }}</td>
+                            <td>{{ commission.getAmountInWorkingCurrency }} {{ commission.getWorkingCurrencyCode }}</td>
+                            <td>{{ commission.getStatus }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <a href="{{ path('approve_commissions') }}" class="btn btn-success">Approve</a>
+                <a href="#" class="btn btn-danger">Reject</a>
+                <a href="#" class="btn btn-warning">Modify</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
