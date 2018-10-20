@@ -1,0 +1,24 @@
+{
+  "tasks-collections" : [
+    {
+      "id": 1,
+      "progress" : 49,
+      "status" : "Created"
+    },
+    {
+      "id": 2,
+      "progress" : 0,
+      "status" : "In Progress"
+    },
+    {
+      "id": 3,
+      "progress" : 100,
+      "status" : "Done"
+    },
+    {
+      "id": 4,
+      "progress" : 3,
+      "status" : "Finished"
+    }
+  ]
+}

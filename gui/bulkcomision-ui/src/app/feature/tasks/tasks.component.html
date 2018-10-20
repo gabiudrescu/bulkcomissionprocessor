@@ -1,0 +1,21 @@
+
+<h1>Tasks</h1>
+
+<table class="table data-table">
+  <thead>
+  <tr>
+    <th>Progress</th>
+    <th>Status</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of tasksCollections; let index=index">
+      <td>
+        {{ item.progress }}
+      </td>
+      <td>
+        {{ item.status }}
+      </td>
+    </tr>
+  </tbody>
+</table>
